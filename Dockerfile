@@ -29,7 +29,6 @@ ENV NODE_ENV=production
 
 COPY --from=builder /opt/app/next.config.js ./
 # Workaround part 2: Copy the empty files and folders to the run environment so next-translate can figure out how the pages are laid out.
-COPY --from=builder /opt/app/public ./public
 COPY --from=builder /opt/app/.next ./.next
 COPY --from=builder /opt/app/node_modules ./node_modules
 COPY --from=builder /opt/app/package.json ./package.json
